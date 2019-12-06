@@ -1,1 +1,1 @@
-#Proyecto Sumo AUTO
+Proyecto Sumo AUTO
