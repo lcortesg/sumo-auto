@@ -9,13 +9,13 @@
 
 #define NONE 0
 #define INFO 1
-#define SERIAL 1
-#define DEBUG 0
+#define SERIAL INFO
+#define DEBUG INFO
 
-#define PIN_SENSOR_LEFT 9
-#define PIN_SENSOR_F_LEFT 8
+#define PIN_SENSOR_LEFT 8
+#define PIN_SENSOR_F_LEFT 11
 #define PIN_SENSOR_FRONT 10
-#define PIN_SENSOR_F_RIGHT 11
+#define PIN_SENSOR_F_RIGHT 9
 #define PIN_SENSOR_RIGHT 12
 
 #define PIN_LINE_F_LEFT A0
@@ -65,7 +65,7 @@
 /**
  * @brief : constantes del controlador PID
  */
-#define KP 0.064
+#define KP 0.15 //0.064
 #define KI 0.0008
 #define KD 0.016
 
@@ -151,6 +151,11 @@ void setup(){
     #if SERIAL > NONE
         Serial.println("Fight!!!");
     #endif
+    ST.motor(1, 255);
+    ST.motor(2, 255);
+    delay(250);
+    ST.motor(1, 0);
+    ST.motor(2, 0);
 }
 
 void loop(){
@@ -182,8 +187,7 @@ void loop(){
 }
 
 
-void stop(){
-    
+void stop(){ 
     ST.motor(1, 0);
     ST.motor(2, 0);
     digitalWrite(PIN_LED, LOW);
@@ -191,5 +195,4 @@ void stop(){
         ST.motor(1, 0);
         ST.motor(2, 0);
     }
-    
 }
