@@ -19,8 +19,8 @@
 #define PIN_SENSOR_RIGHT 12
 
 #define PIN_LINE_F_LEFT A0
-#define PIN_LINE_F_RIGHT A1
-#define PIN_LINE_B_LEFT A2
+#define PIN_LINE_F_RIGHT A2
+#define PIN_LINE_B_LEFT A1
 #define PIN_LINE_B_RIGHT A3
 
 #define PIN_START_BUTTON 3
@@ -35,7 +35,7 @@
  * 
  * @default 0 nunca detecta linea blanca
  */
-#define TH_LINE 200
+#define TH_LINE 100
 
 /**
  * @brief : define la potencia máxima entregada a los motores
@@ -172,6 +172,9 @@ void loop(){
         if(searchPID()){
             fight();
         }
+    }
+    else if(measureLine()){
+        survive(); 
     }
 
 /*
