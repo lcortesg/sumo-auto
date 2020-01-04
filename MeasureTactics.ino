@@ -1,5 +1,5 @@
 /**
- * @function measureLine : This function reads the line sensors and returns whether or not the robot is over the white line. 
+ * @function measureLine : This function reads the line sensors and determines if robot is over the white line. 
  * @param : none
  * @return : Returns 1 if the white line is detected, 0 otherwise.
  */
