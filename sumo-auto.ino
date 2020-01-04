@@ -137,7 +137,7 @@ void setup(){
     tactic = digitalRead(PIN_DIP_SWITCH);
 
     #if SERIAL > NONE
-        Serial.println("Wait for Buton Start ...");
+        Serial.println("Wait for Button Start ...");
     #endif
 
     pinMode(PIN_START_BUTTON, INPUT_PULLUP);
