@@ -30,7 +30,7 @@ The dates on this document adheres to the standard [ISO 8601](https://www.iso.or
 ### Security
 - None
 
-## [1.0.0] - 2019-12-05
+## [1.0.0]() - 2019-12-05
 ### Added
 - Arduino files
 - Libraries
