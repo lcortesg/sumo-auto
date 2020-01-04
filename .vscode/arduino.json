@@ -1,0 +1,6 @@
+{
+    "board": "arduino:avr:nano",
+    "configuration": "cpu=atmega328",
+    "programmer": "AVRISP mkII",
+    "sketch": "sumo-auto.ino"
+}
