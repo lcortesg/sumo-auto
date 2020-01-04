@@ -1,5 +1,5 @@
 /**
- * @brief: Firmware desarrollado para el Robot Sumo Don Fede que por ahora solo encuentra al rival usando un control PID.
+ * @brief: Firmware developed for the Robot Sumo Auto named "Don Fede". It finds it's enemy using a PID controller.
  * @author : Diego Pandolfa.
  * @date: 12/10/2018
  */
@@ -30,6 +30,7 @@
 
 /**
  * @brief : threshold de color.
+ * Under normal conditions black is measured undor 
  * normalmente mide bajo 100 en blanco y sobre 700 en negro
  * definir umbral seguro con desperfectos en el escenario.
  * 
