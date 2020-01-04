@@ -1,7 +1,7 @@
 /**
- * @function measureLine : Lee los sensores de línea y determina si se está detecctando un fondo blanco
+ * @function measureLine : This function reads the line sensors and returns whether or not the robot is over the white line. 
  * @param : none
- * @return : retorna 0 si no se detecta una línea, 1 en caso contrario
+ * @return : Returns 1 if the white line is detected, 0 otherwise.
  */
 /*
 bool measureLine(){
@@ -11,7 +11,7 @@ bool measureLine(){
     line_sensor_b_right = analogRead(PIN_LINE_B_RIGHT);
   
     #if DEBUG > NONE
-        Serial.print("\n>>> LOG: mediciones de linea: \t");
+        Serial.print("\n>>> LOG: line measurements: \t");
         Serial.print(line_sensor_f_left);
         Serial.print("\t");
         Serial.print(line_sensor_f_right);
@@ -44,7 +44,7 @@ bool measureLine(){
     //line_sensor_b_right = analogRead(PIN_LINE_B_RIGHT);
   
     #if DEBUG > NONE
-        Serial.print("\n>>> LOG: mediciones de linea: \t");
+        Serial.print("\n>>> LOG: line sensor measurements: \t");
         Serial.print(line_sensor_f_left);
         Serial.print("\t");
         Serial.print(line_sensor_f_right);
@@ -57,9 +57,9 @@ bool measureLine(){
     return (line_sensor_f_left < TH_LINE) || (line_sensor_f_right < TH_LINE) /*|| (line_sensor_b_left < TH_LINE) || (line_sensor_b_right < TH_LINE)*/;
 }
 /**
- * @function measureEnemy : Lee los sensores reflex difusos y determina si hay un enemigo cerca
+ * @function measureEnemy : This function reads the diffuse reflex sensors and determines an enemy is detected.
  * @param : none
- * @return : retorna 0 si no hay enemigos cerca, 1 en caso contrario.
+ * @return : Returns 0 if an enemy is detected, 1 otherwise.
  */
 
 bool measureEnemy(){
@@ -70,7 +70,7 @@ bool measureEnemy(){
     enemy_sensor_right = !digitalRead(PIN_SENSOR_RIGHT);
 
     #if DEBUG > NONE
-        Serial.print("\n>>> LOG: mediciones de enemigo: \t");
+        Serial.print("\n>>> LOG: enemy measurements: \t");
         Serial.print(enemy_sensor_left);
         Serial.print("\t");
         Serial.print(enemy_sensor_f_left);
