@@ -65,7 +65,7 @@
 #define KD 0.008
 */
 /**
- * @brief : PID controller constants
+ * @brief : PID controller constants.
  * We used the Ziegler–Nichols method to tune this parameters.
  */
 #define KP 0.15 //0.064
@@ -73,7 +73,7 @@
 #define KD 0.016
 
 /**
- * @brief: Reference to follow with the PID controller.
+ * @brief: Reference value to follow with the PID controller.
  */
 #define REF 3000
 
