@@ -7,13 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 The dates on this document adheres to the standard [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.htmll).
 
-## [Unreleased]
+## [Unreleased]()
 - Comments explaining all of the functions
 - Translation for English and Spanish
 
-## [Released]
+## [Released]()
 
-## [1.1.0] - 2020-01-04
+## [1.1.0]() - 2020-01-04
 ### Added
 - Comments in most of the functions.
 - English translations most of the files.
