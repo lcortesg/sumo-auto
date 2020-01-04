@@ -2,6 +2,7 @@
  * @brief: Firmware developed for the Robot Sumo Auto named "Don Fede". It finds it's enemy using a PID controller.
  * @author : Diego Pandolfa.
  * @date: 12/10/2018
+ * Translation by Lucas Cortés.
  */
 
 #include <SoftwareSerial.h>
@@ -29,27 +30,27 @@
 #define TIME_SURVIVE_1 120
 
 /**
- * @brief : threshold de color.
- * Under normal conditions black is measured undor 
- * normalmente mide bajo 100 en blanco y sobre 700 en negro
- * definir umbral seguro con desperfectos en el escenario.
+ * @brief : Color threshold.
+ * Under normal conditions white is measured under 100. 
+ * under normal conditions black is measured over 700.
+ * A safe threshold should be defined under test measurements done in the Dohyo.
  * 
- * @default 0 nunca detecta linea blanca
+ * @default 0 : It will not detect the white line.
  */
 #define TH_LINE 100
 
 /**
- * @brief : define la potencia máxima entregada a los motores
+ * @brief : defines the maximum power given to the motors.
  */
 #define POWER_MAX 255
 
 /**
- * @brief : overflow definido para un contador de ciclos del loop para uso de testeo
+ * @brief : overflow defined for a loop cycle counter for debugging purposes.
  */
 #define TEST_COUNT_MAX 500
 
 /**
- * @brief : overflow definido para un contador de ciclos sin encontrar un enemigo
+ * @brief : overflow defined for an enemy-not-found counter
  */
 #define MISS_COUNT_MAX 1000
 
@@ -64,14 +65,15 @@
 #define KD 0.008
 */
 /**
- * @brief : constantes del controlador PID
+ * @brief : PID controller constants
+ * We used the Ziegler–Nichols method to tune this parameters.
  */
 #define KP 0.15 //0.064
 #define KI 0.0008
 #define KD 0.016
 
 /**
- * @brief: referencia a seguir con el control PID
+ * @brief: Reference to follow with the PID controller.
  */
 #define REF 3000
 
@@ -161,7 +163,7 @@ void setup(){
 
 void loop(){
     /*
-    count++; // comentar linea para codigo final
+    count++; // Comment out this line for the final code
   
     if(measureLine()){
         survive(); 
