@@ -1,8 +1,9 @@
 /**
  * @brief: Firmware desarrollado para el Robot Sumo Don Fede que por ahora solo encuentra al rival usando un control PID.
  * @author : Diego Pandolfa.
- * @date: 27/11/2018
+ * @date: 04/12/2018
  */
+
 #include <SoftwareSerial.h>
 #include <Sabertooth.h>
 
@@ -34,12 +35,12 @@
  * 
  * @default 0 nunca detecta linea blanca
  */
-#define TH_LINE 0
+#define TH_LINE 200
 
 /**
  * @brief : define la potencia máxima entregada a los motores
  */
-#define POWER_MAX 250
+#define POWER_MAX 100
 
 /**
  * @brief : overflow definido para un contador de ciclos del loop para uso de testeo
@@ -74,6 +75,8 @@
 #define REF 3000
 
 #define PIN_SERIAL_ST 6
+
+#define PIN_LED 7
 
 SoftwareSerial SWSerial(NOT_A_PIN, PIN_SERIAL_ST);
 Sabertooth ST(128, SWSerial); // Address 128, and use SWSerial as the serial port.
@@ -117,12 +120,17 @@ void setup(){
   pinMode(PIN_LINE_B_LEFT, INPUT);
   pinMode(PIN_LINE_B_RIGHT, INPUT);
 
+  pinMode(PIN_LED, OUTPUT);
+  digitalWrite(PIN_LED, LOW);
+
   Serial.println("Stay for Buton Start ...");
 
   pinMode(PIN_DIP_SWITCH, INPUT_PULLUP);
   tactic = digitalRead(PIN_DIP_SWITCH);
   pinMode(PIN_START_BUTTON, INPUT_PULLUP);
   while(digitalRead(PIN_START_BUTTON));
+
+  digitalWrite(PIN_LED, HIGH);
 
   Serial.println("Stay for 5 seconds ... ");
   delay(5100);
@@ -136,7 +144,7 @@ void loop(){
     survive(); 
   }
   searchFWD();
-
+  
   if(measureEnemy()){
     if(searchPID()){
       fight();

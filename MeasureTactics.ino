@@ -3,7 +3,7 @@
  * @param : none
  * @return : retorna 0 si no se detecta una línea, 1 en caso contrario
  */
-int measureLine(){
+bool measureLine(){
   line_sensor_f_left = analogRead(PIN_LINE_F_LEFT);
   line_sensor_f_right = analogRead(PIN_LINE_F_RIGHT);
   line_sensor_b_left = analogRead(PIN_LINE_B_LEFT);
