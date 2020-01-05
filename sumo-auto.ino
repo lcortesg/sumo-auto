@@ -1,7 +1,7 @@
 /**
  * @brief: Firmware desarrollado para el Robot Sumo Don Fede que por ahora solo encuentra al rival usando un control PID.
  * @author : Diego Pandolfa.
- * @date: 12/10/2018
+ * @date: 05/11/2018
  */
 #include <SoftwareSerial.h>
 #include <Sabertooth.h>
