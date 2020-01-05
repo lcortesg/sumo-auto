@@ -1,4 +1,4 @@
-# Proyecto Sumo AUTO
+# Sumo Auto
 
 GIT del proyecto Sumo Auto. 
 
