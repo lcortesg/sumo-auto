@@ -71,7 +71,6 @@ modification follow.
 
 ## TERMS AND CONDITIONS
 
-
 ### 0. Definitions.
 
   "This License" refers to version 3 of the GNU General Public License.
@@ -110,7 +109,6 @@ extent that warranties are provided), that licensees may convey the
 work under this License, and how to view a copy of this License.  If
 the interface presents a list of user commands or options, such as a
 menu, a prominent item in the list meets this criterion.
-
 
 ### 1. Source Code.
 
@@ -153,8 +151,6 @@ Source.
 
   The Corresponding Source for a work in source code form is that
 same work.
-
-
 
 ### 2. Basic Permissions.
 
