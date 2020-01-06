@@ -72,7 +72,7 @@ modification follow.
 ## TERMS AND CONDITIONS
 
 ### 0. Definitions.
-### 0. Protecting Users' Legal Rights From Anti-Circumvention Law.
+### 0. Definitions.
 
   "This License" refers to version 3 of the GNU General Public License.
 
