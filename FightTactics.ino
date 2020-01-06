@@ -34,8 +34,8 @@ bool searchPID(){
     Serial.print("\n>>> LOG: actuation:\t");
     Serial.println(actuation);
   #endif
-  ST.motor(1, actuation);
-  ST.motor(2, -actuation);
+  ST.motor(1, -actuation);
+  ST.motor(2, actuation);
   return ( (enemy_sensor_front == 1) && (actuation < 20) );
 }
 
@@ -65,7 +65,11 @@ void fight1(){
       actuation = (actuation >= POWER_MAX)?(POWER_MAX):(actuation+10);
       ST.motor(1, actuation);
       ST.motor(2, actuation);
-      delay(50);
+      delay(20);
+      if(measureLine()){
+        survive();
+        break; 
+      }
     }
   }
   else{
@@ -76,7 +80,7 @@ void fight1(){
 }
 
 void searchFWD(){
-  ST.motor(1, POWER_MAX/3);
-  ST.motor(2, POWER_MAX/3);
-  delay(50);
+  ST.motor(1, POWER_MAX*0.75);
+  ST.motor(2, POWER_MAX*0.75);
+  delay(20);
 }
