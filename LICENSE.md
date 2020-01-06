@@ -72,6 +72,7 @@ modification follow.
 ## TERMS AND CONDITIONS
 
 ### 0. Definitions.
+### 3. Protecting Users' Legal Rights From Anti-Circumvention Law.
 
   "This License" refers to version 3 of the GNU General Public License.
 
@@ -111,6 +112,7 @@ the interface presents a list of user commands or options, such as a
 menu, a prominent item in the list meets this criterion.
 
 ### 1. Source Code.
+### 3. Protecting Users' Legal Rights From Anti-Circumvention Law.
 
   The "source code" for a work means the preferred form of the work
 for making modifications to it.  "Object code" means any non-source
@@ -153,6 +155,8 @@ Source.
 same work.
 
 ### 2. Basic Permissions.
+
+### 3. Protecting Users' Legal Rights From Anti-Circumvention Law.
 
   All rights granted under this License are granted for the term of
 copyright on the Program, and are irrevocable provided the stated
