@@ -2,7 +2,7 @@
  * @brief: Firmware developed for the Robot Sumo Auto named "Don Fede". It finds it's enemy using a PID controller.
  * @author : Diego Pandolfa.
  * @date: 12/10/2018
- * @translation: by Lucas Cortés.
+ * @translation: Lucas Cortés.
  */
 
 #include <SoftwareSerial.h>
