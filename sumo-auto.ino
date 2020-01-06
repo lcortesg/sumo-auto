@@ -5,6 +5,7 @@
  * @translation: Lucas Cortés.
  */
 
+
 #include <SoftwareSerial.h>
 #include <Sabertooth.h>
 
@@ -31,10 +32,10 @@
 
 /**
  * @brief : Color threshold.
- * Under normal conditions white is measured under 100. 
+ * Under normal conditions white is measured under 100.
  * under normal conditions black is measured over 700.
  * A safe threshold should be defined under test measurements done in the Dohyo.
- * 
+ *
  * @default 0 : It will not detect the white line.
  */
 #define TH_LINE 100
@@ -164,20 +165,20 @@ void setup(){
 void loop(){
     /*
     count++; // Comment out this line for the final code
-  
+
     if(measureLine()){
-        survive(); 
+        survive();
     }
     searchFWD();
     */
-    
+
     if(measureEnemy()){
         if(searchPID()){
             fight();
         }
     }
     else if(measureLine()){
-        survive(); 
+        survive();
     }
 
 /*
@@ -189,11 +190,11 @@ void loop(){
     ST.motor(1, 0);
     ST.motor(2, 0);
     while(1);
-  }*/ 
+  }*/
 }
 
 
-void stop(){ 
+void stop(){
     ST.motor(1, 0);
     ST.motor(2, 0);
     digitalWrite(PIN_LED, LOW);
