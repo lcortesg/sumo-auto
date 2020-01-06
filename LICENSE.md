@@ -70,7 +70,7 @@ modification follow.
 
    TERMS AND CONDITIONS
 
-### 0. Definitions
+## 0. Definitions
 
   "This License" refers to version 3 of the GNU General Public License.
 
@@ -109,7 +109,7 @@ work under this License, and how to view a copy of this License.  If
 the interface presents a list of user commands or options, such as a
 menu, a prominent item in the list meets this criterion.
 
-### 1. Source Code.
+## 1. Source Code.
 
   The "source code" for a work means the preferred form of the work
 for making modifications to it.  "Object code" means any non-source
@@ -151,7 +151,7 @@ Source.
   The Corresponding Source for a work in source code form is that
 same work.
 
-### 2. Basic Permissions.
+## 2. Basic Permissions.
 
   All rights granted under this License are granted for the term of
 copyright on the Program, and are irrevocable provided the stated
