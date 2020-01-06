@@ -1,8 +1,8 @@
 # Sumo Auto
 
-GIT del proyecto Sumo Auto. 
+GIT del proyecto Sumo Auto.
 
-Licensed under the [GPLv3 License](https://www.gnu.org/licenses/gpl-3.0.html).
+This project is licensed under the [GPLv3 License](https://www.gnu.org/licenses/gpl-3.0.html).
 
 ## [License](LICENSE.md)
 
