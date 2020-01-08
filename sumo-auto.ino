@@ -7,9 +7,8 @@
 #include <Sabertooth.h>
 
 #define NONE 0
-#define INFO 1
-#define SERIAL INFO
-#define DEBUG INFO
+#define ENABLE 0        // Change this to 1 when testing for real.
+#define DEBUG !ENABLE   // When enabled, this will print via serial prompt all the measurements and messages written into this file, as well as the "Tactic's" files.
 
 #define PIN_SENSOR_LEFT 8
 #define PIN_SENSOR_F_LEFT 11
@@ -62,10 +61,12 @@
 #define KI 0.0008
 #define KD 0.008
 */
+
 /**
  * @brief : PID controller constants.
  * We used the Ziegler–Nichols method to tune this parameters.
  */
+
 #define KP 0.15 //0.064
 #define KI 0.0008
 #define KD 0.016
