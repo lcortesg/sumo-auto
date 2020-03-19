@@ -27,7 +27,7 @@ The dates on this document adheres to the standard [ISO 8601](https://www.iso.or
 
 ### Deprecated
 
-- None
+- None.
 
 ### Removed
 
@@ -41,7 +41,7 @@ The dates on this document adheres to the standard [ISO 8601](https://www.iso.or
 
 ### Security
 
-- None
+- None.
 
 ## [1.0.4](https://gitlab.labcomp.cl/lcortes/sumo-auto/-/tags/v1.0.4) - 18-12-04
 
@@ -55,28 +55,29 @@ The dates on this document adheres to the standard [ISO 8601](https://www.iso.or
 
 ### Added
 
-- Arduino files
-- Libraries
-- Changelog
-- Readme
-- License
+- Arduino files.
+- Libraries.
+- Changelog.
+- Readme.
+- License.
 
 ### Changed
 
-- None
+- None.
 
 ### Deprecated
 
-- None
+- None.
 
 ### Removed
 
-- None
+- None.
 
 ### Fixed
 
-- None
+- None.
 
 ### Security
 
 - Stop signal connected to hardware interruption.
+
