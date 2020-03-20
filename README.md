@@ -1,8 +1,8 @@
-# Sumo Auto
+# Sumo Auto Project
 
-## Project moved to [GitHub](https://github.com/lcortesg/sumo-auto).
+## Project migrated to [GitHub](https://github.com/lcortesg/sumo-auto)
 
-GIT del proyecto Sumo Auto.
+Mega Sumo Auto GIT repository.
 
 This project is licensed under the [GPLv3 License](https://www.gnu.org/licenses/gpl-3.0.html).
 
