@@ -7,5 +7,3 @@ This project is licensed under the [GPLv3 License](https://www.gnu.org/licenses/
 ## [License](LICENSE)
 
 ## [Changelog](CHANGELOG.md)
-
-## [Releases](https://gitlab.labcomp.cl/lcortes/sumo-auto/-/tags)
