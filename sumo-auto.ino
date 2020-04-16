@@ -6,10 +6,10 @@
 #include <SoftwareSerial.h>
 #include <Sabertooth.h>
 
-#define NONE 0
+
 #define ENABLE 0        // Change this to 1 when testing for real.
 #define DEBUG !ENABLE   // When enabled, this will print via serial prompt all the measurements and messages written into this file, as well as the "Tactic's" files.
-
+#define NONE 0
 #define PIN_SENSOR_LEFT 8
 #define PIN_SENSOR_F_LEFT 11
 #define PIN_SENSOR_FRONT 10
