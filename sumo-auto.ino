@@ -113,7 +113,7 @@ void setup(){
     SWSerial.begin(9600);
     ST.autobaud();
 
-    #if SERIAL > NONE
+    #if DEBUG > NONE
         Serial.begin(115200);
         Serial.println("Init Sumo Robot - CoR 2019");
     #endif
@@ -135,7 +135,7 @@ void setup(){
     pinMode(PIN_DIP_SWITCH, INPUT_PULLUP);
     tactic = digitalRead(PIN_DIP_SWITCH);
 
-    #if SERIAL > NONE
+    #if DEBUG > NONE
         Serial.println("Wait for Button Start ...");
     #endif
 
@@ -144,13 +144,13 @@ void setup(){
     while(!digitalRead(PIN_START_BUTTON));
     digitalWrite(PIN_LED, HIGH);
 
-    #if SERIAL > NONE
+    #if DEBUG > NONE
         Serial.println("Wait for 5 seconds ... ");
     #endif
 
     delay(5050);
 
-    #if SERIAL > NONE
+    #if DEBUG > NONE
         Serial.println("Fight!!!");
     #endif
     ST.motor(1, 255);
