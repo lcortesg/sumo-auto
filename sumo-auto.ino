@@ -1,28 +1,29 @@
 /**
  * @brief: Firmware developed for the Robot Sumo Auto named "Don Fede". It finds it's enemy using a PID controller.
- * @date: 20/01/04
+ * @date: 20/04/10
  */
 
 #include <SoftwareSerial.h>
 #include <Sabertooth.h>
 
-#define NONE 0
+
 #define ENABLE 0        // Change this to 1 when testing for real.
 #define DEBUG !ENABLE   // When enabled, this will print via serial prompt all the measurements and messages written into this file, as well as the "Tactic's" files.
+#define NONE 0
 
-#define PIN_SENSOR_LEFT 8
-#define PIN_SENSOR_F_LEFT 11
-#define PIN_SENSOR_FRONT 10
-#define PIN_SENSOR_F_RIGHT 9
-#define PIN_SENSOR_RIGHT 12
+//#define PIN_SENSOR_LEFT 8
+//#define PIN_SENSOR_F_LEFT 11
+//#define PIN_SENSOR_FRONT 10
+//#define PIN_SENSOR_F_RIGHT 9
+//#define PIN_SENSOR_RIGHT 12
 
 #define PIN_LINE_F_LEFT A0
 #define PIN_LINE_F_RIGHT A2
 #define PIN_LINE_B_LEFT A1
 #define PIN_LINE_B_RIGHT A3
 
-#define PIN_START_BUTTON 3
-#define PIN_DIP_SWITCH 2
+//#define PIN_START_BUTTON 3
+//#define PIN_DIP_SWITCH 2
 
 #define TIME_SURVIVE_1 120
 
@@ -84,6 +85,8 @@
 SoftwareSerial SWSerial(NOT_A_PIN, PIN_SERIAL_ST);
 Sabertooth ST(128, SWSerial); // Address 128, and use SWSerial as the serial port.
 
+double enemy;
+
 double enemy_sensor_left = 0;
 double enemy_sensor_f_left = 0;
 double enemy_sensor_front = 0;
@@ -106,6 +109,9 @@ double ref = REF;
 int count = 0;
 int miss_count = 0;
 int tactic = 0;
+int cantidad = 0;
+byte var = B01100;
+int cont = 0;
 
 
 void setup(){
@@ -113,44 +119,38 @@ void setup(){
     SWSerial.begin(9600);
     ST.autobaud();
 
-    #if SERIAL > NONE
+    #if DEBUG > NONE
         Serial.begin(115200);
         Serial.println("Init Sumo Robot - CoR 2019");
     #endif
 
-    pinMode(PIN_SENSOR_LEFT, INPUT_PULLUP);
-    pinMode(PIN_SENSOR_F_LEFT, INPUT_PULLUP);
-    pinMode(PIN_SENSOR_FRONT, INPUT_PULLUP);
-    pinMode(PIN_SENSOR_F_RIGHT, INPUT_PULLUP);
-    pinMode(PIN_SENSOR_RIGHT, INPUT_PULLUP);
+    DDRB   = B100000;
+    DDRC  |= B000000;
+    DDRD  |= B000000;
+    PORTB &= B011111;
 
-    pinMode(PIN_LINE_F_LEFT, INPUT);
-    pinMode(PIN_LINE_F_RIGHT, INPUT);
-    pinMode(PIN_LINE_B_LEFT, INPUT);
-    pinMode(PIN_LINE_B_RIGHT, INPUT);
 
-    pinMode(PIN_LED, OUTPUT);
-    //digitalWrite(PIN_LED, LOW);
+    
+    tactic = PINC & 000100;
 
-    pinMode(PIN_DIP_SWITCH, INPUT_PULLUP);
-    tactic = digitalRead(PIN_DIP_SWITCH);
-
-    #if SERIAL > NONE
+    #if DEBUG > NONE
+        for (int j = 0; j < 5; j++){if((var>>j & 1) == 0) cont +=1;}
+        Serial.println(cont);
         Serial.println("Wait for Button Start ...");
     #endif
 
-    pinMode(PIN_START_BUTTON, INPUT_PULLUP);
-    attachInterrupt(digitalPinToInterrupt(PIN_START_BUTTON), stop, FALLING);
-    while(!digitalRead(PIN_START_BUTTON));
-    digitalWrite(PIN_LED, HIGH);
+    
+    attachInterrupt(digitalPinToInterrupt(PINC & 001000), stop, FALLING);
+    while(!(PINC & 001000));
+    PORTB = PORTB | B100000;
 
-    #if SERIAL > NONE
+    #if DEBUG > NONE
         Serial.println("Wait for 5 seconds ... ");
     #endif
 
     delay(5050);
 
-    #if SERIAL > NONE
+    #if DEBUG > NONE
         Serial.println("Fight!!!");
     #endif
     ST.motor(1, 255);
@@ -169,7 +169,7 @@ void loop(){
     }
     searchFWD();
     */
-
+    
     if(measureEnemy()){
         if(searchPID()){
             fight();

@@ -2,8 +2,10 @@
  * @function
  */
 bool searchPID(){
-    measure = ((enemy_sensor_left + enemy_sensor_f_left + enemy_sensor_front + enemy_sensor_f_right + enemy_sensor_right) == 0)?(measure):(enemy_sensor_left*1000 + enemy_sensor_f_left*2000 + enemy_sensor_front*3000 + enemy_sensor_f_right*4000 + enemy_sensor_right*5000)/(enemy_sensor_left + enemy_sensor_f_left + enemy_sensor_front + enemy_sensor_f_right + enemy_sensor_right);
-
+    cantidad = 0;
+    for (int j = 0; j < 5; j++){if((PINB>>j & 1) == 0) cantidad +=1;}
+    //measure = ((PINB & B11111) == B11111)?(measure):((!PINB & B000001)*1000 + (!PINB & B01000)*2000 + (!PINB & B00100)*3000 + (!PINB & B00010)*4000 + (!PINB & B10000)*5000)/( (!PINB & B00001) + (!PINB & B00010) + (!PINB & B00100) + (!PINB & B01000) + (!PINB & B10000) );
+    measure = ((PINB & B11111) == B11111)?(measure):((!PINB & B000001)*1000 + (!PINB & B01000)*2000 + (!PINB & B00100)*3000 + (!PINB & B00010)*4000 + (!PINB & B10000)*5000)/( cantidad );
     error = ref - measure;
  
     error_int += (actuation >= POWER_MAX)?(0):(error);
