@@ -142,7 +142,7 @@ void setup(){
     
     attachInterrupt(digitalPinToInterrupt(PINC & 001000), stop, FALLING);
     while(!(PINC & 001000));
-    PORTB = PORTB | B100000;
+    PORTB |= B100000;
 
     #if DEBUG > NONE
         Serial.println("Wait for 5 seconds ... ");

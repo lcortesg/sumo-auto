@@ -67,7 +67,7 @@ bool measureLine(){
 
 bool measureEnemy(){
     int out_enemy = 0; 
-    enemy = (PINB & B00011111);
-    if (enemy < B00011111) out_enemy = 1;
+    enemy = (PINB & B11111);
+    if (enemy < B11111) out_enemy = 1;
     return (out_enemy);
 }
