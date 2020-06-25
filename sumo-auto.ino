@@ -10,12 +10,20 @@
 #define ENABLE 0        // Change this to 1 when testing for real.
 #define DEBUG !ENABLE   // When enabled, this will print via serial prompt all the measurements and messages written into this file, as well as the "Tactic's" files.
 #define NONE 0
+<<<<<<< HEAD
 
 //#define PIN_SENSOR_LEFT 8
 //#define PIN_SENSOR_F_LEFT 11
 //#define PIN_SENSOR_FRONT 10
 //#define PIN_SENSOR_F_RIGHT 9
 //#define PIN_SENSOR_RIGHT 12
+=======
+#define PIN_SENSOR_LEFT 8
+#define PIN_SENSOR_F_LEFT 11
+#define PIN_SENSOR_FRONT 10
+#define PIN_SENSOR_F_RIGHT 9
+#define PIN_SENSOR_RIGHT 12
+>>>>>>> d5f836c6301fcbf502449e219aa0a45e801b2211
 
 #define PIN_LINE_F_LEFT A0
 #define PIN_LINE_F_RIGHT A2
@@ -134,8 +142,11 @@ void setup(){
     tactic = PINC & 000100;
 
     #if DEBUG > NONE
+<<<<<<< HEAD
         for (int j = 0; j < 5; j++){if((var>>j & 1) == 0) cont +=1;}
         Serial.println(cont);
+=======
+>>>>>>> d5f836c6301fcbf502449e219aa0a45e801b2211
         Serial.println("Wait for Button Start ...");
     #endif
 
